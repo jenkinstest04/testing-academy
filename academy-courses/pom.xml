@@ -3,7 +3,7 @@
 	<parent>
 		<groupId>com.teachingacademy.academy</groupId>
 		<artifactId>academy-parent</artifactId>
-		<version>2018.02.0</version>
+		<version>2018.02.0-SNAPSHOT</version>
 	</parent>
 	<artifactId>academy-courses</artifactId>
 	<name>Courses Implementation</name>
