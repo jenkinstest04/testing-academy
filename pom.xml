@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.teachingacademy.academy</groupId>
 	<artifactId>academy-parent</artifactId>
@@ -64,19 +66,24 @@
 		<module>academy-registration-repository</module>
 		<module>academy-registration-integration</module>
 	</modules>
+	
+	<distributionManagement>
+		<snapshotRepository>
+			<id>snapshot-local</id>
+			<url>http://139.59.41.73:8081/artifactory/snapshot-local</url>
+		</snapshotRepository>
+		<repository>
+			<id>release-local</id>
+			<url>http://139.59.41.73:8081/artifactory/release-local</url>
+		</repository>
+
+	</distributionManagement>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<spring.version>4.2.4.RELEASE</spring.version>
 	</properties>
-
-	<distributionManagement>
-		<snapshotRepository>
-			<id>nexus-snapshots</id>
-			<url>http://localhost:8081/nexus/content/repositories/snapshots/</url>			
-		</snapshotRepository>		
-	</distributionManagement>
 
 	<build>
 		<pluginManagement>
