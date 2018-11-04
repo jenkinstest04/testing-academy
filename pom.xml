@@ -71,6 +71,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<spring.version>4.2.4.RELEASE</spring.version>
+		<sample4.version>2017.02.0-SNAPSHOT</sample4.version>
 	</properties>
 
 	<build>
@@ -80,6 +81,21 @@
 					<groupId>org.codehaus.mojo</groupId>
 					<artifactId>versions-maven-plugin</artifactId>
 					<version>2.7</version>
+					<configuration>
+						<allowSnapshots>false</allowSnapshots>
+						<properties>
+							<property>
+								<name>sample4.version</name>
+								<version>[2017.02.0,2017.02.1-!)</version>
+							</property>
+						</properties>
+						<includes>
+							<include>com.gear:sample4</include>
+							<!-- example for include using a wild character -->
+							<!-- <include>com.gear:*</include> -->
+						</includes>
+					<excludes><exclude>org.springframework:*</exclude></excludes>
+					</configuration>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -153,6 +169,8 @@
 	</reporting>
 
 	<dependencyManagement>
+
+
 		<dependencies>
 			<!-- <dependency> <groupId>org.codehaus.mojo</groupId> <artifactId>versions-maven-plugin</artifactId> 
 				<version>2.7</version> </dependency> -->
@@ -160,6 +178,11 @@
 				<groupId>${project.groupId}</groupId>
 				<artifactId>academy-shared</artifactId>
 				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.gear</groupId>
+				<artifactId>sample4</artifactId>
+				<version>${sample4.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>${project.groupId}</groupId>
